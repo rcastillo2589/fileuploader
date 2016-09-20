@@ -1,3 +1,5 @@
 language: node_js
 node_js:
   - "5.9"
+notifications:
+  slack: proceedui:XsMsqNJ55KPmfYJ9EyrcxmmP
