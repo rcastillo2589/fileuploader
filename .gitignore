@@ -1,6 +1,7 @@
 /node_modules
 /typings
 /tsd_typings/
+/.vscode
 npm-debug.log
 
 /dist/
