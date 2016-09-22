@@ -3,7 +3,7 @@ var chaiHttp = require('chai-http');
 var assert = chai.assert,
     foo = 'bar';
 var should = chai.should();
-chai.Use(chaiHttp);
+chai.use(chaiHttp);
 
 describe('foo', function() {
   describe('', function() {
