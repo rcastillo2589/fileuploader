@@ -20,10 +20,11 @@ var app = express();
 app.set('port', (process.env.PORT || 5000));
 
 app.get('/', function(req, res) {
-	var page = "<h1>Test</h1>";
-	res.send(page)
+	res.status(200).send('ok');
 });
 
-app.listen(app.get('port'), function() {
+var server = app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
+
+module.exports = server;
