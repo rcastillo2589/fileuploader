@@ -1,27 +1,18 @@
-var express = require('express');
-var url = require('url');
-var Pool = require('pg').Pool;
+const express = require('express');
+const url = require('url');
+const Pool = require('pg').Pool;
+const aws = require('aws-sdk');
 
-var params = url.parse(process.env.DATABASE_URL);
-var auth = params.auth.split(':');
+const config = require('./config/appConfig');
+const index = require('./routes/index');
 
-var config = {
-  user: auth[0],
-  password: auth[1],
-  host: params.hostname,
-  port: params.port,
-  database: params.pathname.split('/')[1],
-  ssl: true
-};
+const pool = new Pool(config.poolConfig);
+const app = express();
 
-var pool = new Pool(config);
+app.set('port', config.port);
 
-var app = express();
-app.set('port', (process.env.PORT || 5000));
-
-app.get('/', function(req, res) {
-	res.status(200).send('ok');
-});
+// Routing
+app.use(index);
 
 var server = app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));

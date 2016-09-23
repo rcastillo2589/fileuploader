@@ -30,6 +30,14 @@ describe('file uploader api', function() {
         done();
       });
   });
+  it('responds to /sign-s3', function testS3 (done) {
+    chai.request(server)
+      .get('/sign-s3')
+      .end(function (err, res) {
+        res.should.have.status(200);
+        done();
+      });
+  });
   it('404 everything else', function testPath(done) {
     chai.request(server)
       .get('/foo/bar')

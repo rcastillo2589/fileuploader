@@ -7,5 +7,5 @@ npm-debug.log
 /dist/
 
 .idea
-
+.env
 .DS_Store
