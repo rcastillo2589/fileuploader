@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/rcastillo2589/fileuploader.svg?branch=master)](https://travis-ci.org/rcastillo2589/fileuploader)
 
-# FileUploader
+# Flash Cards
 
-Simple app that allows users to upload file and receive shareable link to send to others to download.
+Simple app that allows users to create flash cards for studying.
